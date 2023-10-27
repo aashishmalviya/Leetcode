@@ -2,7 +2,6 @@ class Solution:
     def candy(self, ratings: List[int]) -> int:
         
         totalCandies = len(ratings)
-        
         i = 1
         
         while i < len(ratings):
