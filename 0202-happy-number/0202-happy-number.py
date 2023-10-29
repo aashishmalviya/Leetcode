@@ -4,7 +4,7 @@ class Solution:
         while n > 0:
             dig = n % 10
             finalSum += dig * dig
-            n //= 10
+            n = n//10
         return finalSum
     
     def isHappy(self, n: int) -> bool:
