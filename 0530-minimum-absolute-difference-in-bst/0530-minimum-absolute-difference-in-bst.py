@@ -13,6 +13,4 @@ class Solution:
                 yield root.val
                 yield from minabs_generator(root.left)
                 
-        test = list(starmap(operator.sub, pairwise(minabs_generator(root))))
-        print(test)
-        return min(test)
+        return min(starmap(operator.sub, pairwise(minabs_generator(root))))
