@@ -1,3 +1,5 @@
+# https://leetcode.com/problems/word-break/discuss/748479/Python3-Solution-with-a-Detailed-Explanation-Word-Break
+
 class Solution:
     def wordBreak(self, s: str, wordDict: List[str]) -> bool:
         n = len(s)
