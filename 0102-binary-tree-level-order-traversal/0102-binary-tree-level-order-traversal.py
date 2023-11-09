@@ -17,7 +17,9 @@ class Solution:
         while q:
             currentLevel = []
             
-            for i in range(len(q)):
+            qSize = len(q)
+            
+            for i in range(qSize):
                 currentNode = q.popleft()
                 currentLevel.append(currentNode.val)
                 
