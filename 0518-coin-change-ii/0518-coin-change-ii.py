@@ -2,7 +2,7 @@ class Solution:
     def change(self, amount: int, coins: List[int]) -> int:
         dp = [1] + [0] * amount
         
-        coins.sort()
+        #coins.sort()
         
         for currentCoin in coins:
             for currentAmount in range(currentCoin, amount+1):
