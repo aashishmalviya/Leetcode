@@ -8,5 +8,7 @@ class Solution:
             for coin in coins:
                 if coin <= currentAmount:
                     dp[currentAmount] = min(dp[currentAmount], dp[currentAmount - coin] + 1)
+                else:
+                    break
         
         return dp[amount] if dp[amount] != amount+1 else -1
