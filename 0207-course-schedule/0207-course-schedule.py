@@ -7,16 +7,16 @@ class Solution:
         for course, course_preq in prerequisites:
             dependencies[course].append(course_preq)
 
-        visited = set()
+        visiting = set()
 
         def cycle_present(course):
             if not dependencies[course]:
                 return False
 
-            if course in visited:
+            if course in visiting:
                 return True
 
-            visited.add(course)
+            visiting.add(course)
 
             for dependency in dependencies[course]:
                 if cycle_present(dependency):
