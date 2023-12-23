@@ -3,29 +3,27 @@ class Solution:
         if not grid:
             return 0
         
-        ans = 0
+        island_count = 0
         
         rows = len(grid)
         cols = len(grid[0])
         
-        def dfs(i, j):
+        def helper(i, j):
             
             if i<0 or i>=rows or j<0 or j>=cols or grid[i][j] != '1':
                 return
-        
+            
             grid[i][j] = '#'
             
-            for dirX, dirY in (0, 1), (0, -1), (1, 0), (-1, 0):
-                newX = dirX + i
-                newY = dirY + j
-                
-                dfs(newX, newY)
+            directions = [(0,1), (1,0), (0,-1), (-1,0)]
             
-        
+            for x,y in directions:
+                helper(i+x, j+y)
+            
         for i in range(rows):
             for j in range(cols):
                 if grid[i][j] == '1':
-                    dfs(i, j)
-                    ans += 1
+                    helper(i, j)
+                    island_count += 1
         
-        return ans
+        return island_count
