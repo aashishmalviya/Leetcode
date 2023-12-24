@@ -25,7 +25,11 @@ class Solution:
 
         for word in words:
             my_trie.add_word(word)
-
+            
+        starters = [i for i in my_trie.root.children.keys()]
+        
+        #print(starters)
+        
         rows = len(board)
         cols = len(board[0])
 
@@ -33,10 +37,11 @@ class Solution:
 
         for i in range(rows):
             for j in range(cols):
-                words_found = []
-                current_word = ""
-                self.dfs_helper(board, i, j, my_trie.root, current_word, words_found)
-                result += words_found
+                if board[i][j] in starters:
+                    words_found = []
+                    current_word = ""
+                    self.dfs_helper(board, i, j, my_trie.root, current_word, words_found)
+                    result += words_found
 
         return result
 
