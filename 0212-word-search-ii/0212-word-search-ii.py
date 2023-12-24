@@ -25,11 +25,6 @@ class Solution:
 
         for word in words:
             my_trie.add_word(word)
-            
-        #optional: small optimization to trigger check only when the cell matches first char of any targeted words
-        starters = [i for i in my_trie.root.children.keys()]
-        
-        #print(starters)
         
         rows = len(board)
         cols = len(board[0])
@@ -38,7 +33,7 @@ class Solution:
 
         for i in range(rows):
             for j in range(cols):
-                if board[i][j] in my_trie.root.children:
+                if board[i][j] in my_trie.root.children: #optional: small optimization to trigger check only when the cell matches first char of any targeted words
                     words_found = []
                     current_word = ""
                     self.dfs_helper(board, i, j, my_trie.root, current_word, words_found)
