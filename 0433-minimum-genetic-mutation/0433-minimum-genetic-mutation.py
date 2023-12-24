@@ -1,3 +1,5 @@
+#https://leetcode.com/problems/minimum-genetic-mutation/discuss/3271728/433%3A-Solution-with-step-by-step-explanation
+
 class Solution:
     def minMutation(self, startGene: str, endGene: str, bank: List[str]) -> int:
         
