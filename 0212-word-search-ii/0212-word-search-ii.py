@@ -26,6 +26,7 @@ class Solution:
         for word in words:
             my_trie.add_word(word)
             
+        #small optimization to trigger check only when the cell matches first char of any targeted words
         starters = [i for i in my_trie.root.children.keys()]
         
         #print(starters)
