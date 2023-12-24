@@ -32,7 +32,7 @@ class WordDictionary:
         if word[i] == '.':
             return any((self.search_helper(word, child, i+1) for child in node.children.values()))
 
-        return self.search_helper(word, node.children.get(word[i]), i+1)
+        return self.search_helper(word, node.children.get(word[i], None), i+1)
 
 
 # Your WordDictionary object will be instantiated and called as such:
