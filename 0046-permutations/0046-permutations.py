@@ -9,6 +9,5 @@ class Solution:
 
     def permute(self, nums: List[int]) -> List[List[int]]:
         final_result = []
-        current_res = []
-        self.permutation_helper(nums, final_result, current_res)
+        self.permutation_helper(nums, final_result, [])
         return final_result
