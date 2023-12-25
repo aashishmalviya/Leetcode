@@ -1,3 +1,5 @@
+# https://leetcode.com/problems/permutations/discuss/816693/python-solutionor93or-utilized-the-same-logic-for-problem-39-and-40or-with-illustration
+
 class Solution:
     def permutation_helper(self, nums, final_result, current_res):
         if not nums:
