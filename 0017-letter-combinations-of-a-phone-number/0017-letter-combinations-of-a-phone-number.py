@@ -1,3 +1,5 @@
+#https://leetcode.com/problems/letter-combinations-of-a-phone-number/discuss/3313021/Python-Simple-Solution-Easiest
+
 class Solution:
     def letterCombinations(self, digits: str) -> List[str]:
         if not digits:
