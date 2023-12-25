@@ -16,6 +16,4 @@ class Solution:
                 del self.temp_list[-1]
 
         combination_populator(1, n, k)
-        # print(self.temp_list)
-        # print(self.result)
         return self.result
