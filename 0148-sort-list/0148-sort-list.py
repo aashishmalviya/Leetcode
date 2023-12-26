@@ -4,7 +4,6 @@
 #         self.val = val
 #         self.next = next
 
-
 # https://leetcode.com/problems/sort-list/discuss/3206790/148%3A-Solution-with-step-by-step-explanation
 # https://leetcode.com/problems/sort-list/discuss/1796085/Sort-List-or-Python-O(nlogn)-Solution-or-95-Faster
 
@@ -23,7 +22,7 @@ class Solution:
 
             return slow
 
-        def merge(left, right) -> ListNode:
+        def merge_sorted_lists(left, right) -> ListNode:
             dummy_node = ListNode(0)
             current = dummy_node
 
@@ -50,4 +49,4 @@ class Solution:
         left = self.sortList(left)
         right = self.sortList(right)
 
-        return merge(left, right)
+        return merge_sorted_lists(left, right)
