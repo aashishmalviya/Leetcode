@@ -3,6 +3,11 @@
 #     def __init__(self, val=0, next=None):
 #         self.val = val
 #         self.next = next
+
+
+# https://leetcode.com/problems/sort-list/discuss/3206790/148%3A-Solution-with-step-by-step-explanation
+# https://leetcode.com/problems/sort-list/discuss/1796085/Sort-List-or-Python-O(nlogn)-Solution-or-95-Faster
+
 class Solution:
     def sortList(self, head: Optional[ListNode]) -> Optional[ListNode]:
         if not head or not head.next:
