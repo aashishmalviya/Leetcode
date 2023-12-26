@@ -42,7 +42,6 @@ class Solution:
                 nodes_vals += [head_in_current_list.val]
                 head_in_current_list = head_in_current_list.next
 
-        
         nodes_vals.sort(reverse = True)
         print(nodes_vals)
         
