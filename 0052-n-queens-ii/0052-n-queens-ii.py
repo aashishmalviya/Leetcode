@@ -1,17 +1,12 @@
 class Solution:
     def totalNQueens(self, n: int) -> int:
-        state = [["."] * n for _ in range(n)]
-        res  = []
 
         cols_covered = set()
         diag_covered = set()
         anti_diag_covered = set()
 
-        
-
         def nQueen_valid_solutions_counter(current_row) -> int:
             if current_row == n:
-                #valid_states_count += 1
                 return 1
 
             valid_states_count = 0
