@@ -1,5 +1,11 @@
+# Ref 1: https://leetcode.com/problems/n-queens-ii/discuss/2111513/Python-Solution-with-Explanation
+
+# Ref 2: https://leetcode.com/problems/n-queens-ii/discuss/1237811/Short-and-Easy-w-Explanation-and-Visualization-or-Backtracking-Explained!
+
 class Solution:
     def totalNQueens(self, n: int) -> int:
+        # state = [["."] * n for _ in range(n)]
+        # res  = []
 
         cols_covered = set()
         diag_covered = set()
@@ -7,6 +13,7 @@ class Solution:
 
         def nQueen_valid_solutions_counter(current_row) -> int:
             if current_row == n:
+                #valid_states_count += 1
                 return 1
 
             valid_states_count = 0
