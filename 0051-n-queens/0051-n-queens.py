@@ -1,3 +1,5 @@
+# https://leetcode.com/problems/n-queens/discuss/2107719/Python-Solution-with-Explanation
+
 class Solution:
     def solveNQueens(self, n: int) -> List[List[str]]:
         state = [["."] * n for i in range(n)]
