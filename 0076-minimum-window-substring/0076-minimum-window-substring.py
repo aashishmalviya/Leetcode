@@ -17,10 +17,13 @@ class Solution:
             required[c] += 1
 
         while end < slen:
-            if required[s[end]] > 0:
-                matched_chars += 1
-
-            required[s[end]] -= 1
+            if s[end] in required:
+                if required[s[end]] > 0:
+                    matched_chars += 1
+                    
+            #as we found the char in s so the new requirement for this char is -= 1
+            required[s[end]] -= 1 
+            
             end += 1
 
             while matched_chars == tlen:
