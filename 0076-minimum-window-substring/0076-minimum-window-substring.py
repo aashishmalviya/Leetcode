@@ -21,7 +21,6 @@ class Solution:
                 if required[s[end]] > 0:
                     matched_chars += 1
                     
-            #as we found the char in s so the new requirement for this char is -= 1
             required[s[end]] -= 1 
             
             end += 1
