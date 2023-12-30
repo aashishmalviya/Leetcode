@@ -17,7 +17,7 @@ class Solution:
             required[c] += 1
 
         while end < slen:
-            if s[end] in required and required[s[end]] > 0:
+            if required[s[end]] > 0:
                 matched_chars += 1
 
             required[s[end]] -= 1
