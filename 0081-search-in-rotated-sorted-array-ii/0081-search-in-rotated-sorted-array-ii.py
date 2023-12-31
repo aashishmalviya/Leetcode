@@ -8,9 +8,8 @@ class Solution:
             if nums[mid] == target:
                 return True
             
-            if nums[left] == nums[mid] == nums[right]:
+            if nums[left] == nums[mid]:
                 left += 1
-                right -= 1
                 continue
             
             if nums[left] <= nums[mid]:
