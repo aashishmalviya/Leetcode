@@ -4,8 +4,7 @@ class Solution:
     def findMin(self, nums: List[int]) -> int:
         low, high = 0, len(nums) - 1
         
-#         if nums[low] < nums[high]:
-#             return nums[low]
+        if nums[low] < nums[high]: return nums[low]
         
         while low < high:
             mid = (low + high) >> 1
