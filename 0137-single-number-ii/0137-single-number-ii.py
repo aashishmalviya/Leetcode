@@ -12,12 +12,12 @@ class Solution:
 			twos = (twos ^ num) & (~ones)
 		return ones
 
-	# def testSol(self):
-	# 	assert self.singleNumber([2, 2, 3, 2]) == 3
-	# 	assert self.singleNumber([]) == 0
-	# 	assert self.singleNumber(None) == 0
-	# 	print("All ok")
+	def testSol(self):
+		assert self.singleNumber([2, 2, 3, 2]) == 3
+		assert self.singleNumber([]) == 0
+		assert self.singleNumber(None) == 0
+		print("All ok")
 
-# test = Solution()
-# test.testSol()
-# print(test.singleNumber([2, 2, 3, 2]))
+test = Solution()
+test.testSol()
+print(test.singleNumber([2, 2, 3, 2]))
