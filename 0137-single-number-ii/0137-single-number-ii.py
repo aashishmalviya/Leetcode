@@ -1,3 +1,6 @@
+# https://www.youtube.com/watch?v=7xJJ_42P_0U
+# https://www.youtube.com/watch?v=MInz2ao4wao
+
 class Solution:
 	def singleNumber(self, nums: list[int]) -> int:
 		if not nums:
