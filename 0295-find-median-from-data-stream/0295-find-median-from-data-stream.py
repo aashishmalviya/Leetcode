@@ -1,4 +1,4 @@
-from heapq import heappush, heappop
+from heapq import heappush, heappop, heappushpop
 class MedianFinder:
 
     def __init__(self):
@@ -7,13 +7,9 @@ class MedianFinder:
 
     def addNum(self, num: int) -> None:
         if len(self.left_max_heap) == len(self.right_min_heap):
-            heappush(self.left_max_heap, -num)
-            temp = -heappop(self.left_max_heap)
-            heappush(self.right_min_heap, temp)
+            heappush(self.right_min_heap, -heappushpop(self.left_max_heap, -num))
         else:
-            heappush(self.right_min_heap, num)
-            temp = heappop(self.right_min_heap)
-            heappush(self.left_max_heap, -temp)
+            heappush(self.left_max_heap, -heappushpop(self.right_min_heap, num))
 
     def findMedian(self) -> float:
         if len(self.left_max_heap) == len(self.right_min_heap):
