@@ -2,7 +2,7 @@ from collections import defaultdict
 class Solution:
     def maxPoints(self, points: List[List[int]]) -> int:
         
-        @cache
+        #@cache
         def my_gcd(a, b):
             while b:
                 a, b = b, a%b
