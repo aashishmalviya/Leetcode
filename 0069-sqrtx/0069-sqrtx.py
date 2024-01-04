@@ -7,7 +7,7 @@ class Solution:
             
             mid = first + (last-first)//2
             
-            if mid == x//mid:
+            if mid*mid == x:
                 return mid
             
             if mid*mid < x:
