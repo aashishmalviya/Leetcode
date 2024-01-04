@@ -23,12 +23,6 @@
 #         return dp[n] == Possible
 
 class Solution:
-    def wordBreak(self, s: str, wordDict: List[str]) -> bool:
-        self.wordSet = set(wordDict)
-        self.dp_len = [-1] * (len(s) + 1)
-        print(self.wordSet)
-        return self.dfs_helper(0, s)
-    
     def __init__(self):
         self.wordSet = set()
         self.dp_len = None
@@ -56,4 +50,8 @@ class Solution:
         return self.dp_len[index]
 
 
-    
+    def wordBreak(self, s: str, wordDict: List[str]) -> bool:
+        self.wordSet = set(wordDict)
+        self.dp_len = [-1] * (len(s) + 1)
+        print(self.wordSet)
+        return self.dfs_helper(0, s)
