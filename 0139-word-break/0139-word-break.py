@@ -29,7 +29,7 @@ class Solution:
 
     def dfs_helper(self, index: int, s: str) -> bool:
         if index == len(s):
-            return True
+            return True   
 
         if self.dp_len[index] != -1:
             return self.dp_len[index]
@@ -53,5 +53,5 @@ class Solution:
     def wordBreak(self, s: str, wordDict: List[str]) -> bool:
         self.wordSet = set(wordDict)
         self.dp_len = [-1] * (len(s) + 1)
-        print(self.wordSet)
+        #print(self.wordSet)
         return self.dfs_helper(0, s)
