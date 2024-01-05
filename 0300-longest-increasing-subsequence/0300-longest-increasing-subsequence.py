@@ -13,6 +13,10 @@
                     
 #         return max(dp)
 
+
+#https://leetcode.com/problems/longest-increasing-subsequence/discuss/2395570/Python3-oror-7-lines-binSearch-cheating-wexplanation-oror-TS%3A-98-100
+
+# TC: NlogN, SC: N
 import bisect
 class Solution:
     def lengthOfLIS(self, nums: List[int]) -> int:
