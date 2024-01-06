@@ -8,13 +8,17 @@ class Solution:
             
             dp[0][0] = True
 
+            # for j in range(1, len(p)+1):
+            #     flag = True
+            #     for k in range(1, j+1):
+            #         if p[k-1] != '*':
+            #             flag = False
+            #             break
+            #     dp[0][j] = flag
+                
             for j in range(1, len(p)+1):
-                flag = True
-                for k in range(1, j+1):
-                    if p[k-1] != '*':
-                        flag = False
-                        break
-                dp[0][j] = flag
+                if(p[j-1] == '*' ):
+                    dp[0][j] = dp[0][j-1];
                 
             # for j in range(1,m+1):
             # if(p[j-1] == '*' ): dp[0][j] = dp[0][j-1];
