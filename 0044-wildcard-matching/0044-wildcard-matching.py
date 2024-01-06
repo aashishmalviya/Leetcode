@@ -1,7 +1,7 @@
 class Solution:
     def isMatch(self, s: str, p: str) -> bool:
         
-        #dp = [[-1] * (len(p)+1) for _ in range(len(s) + 1)]
+
 
         def solverTab(s: str, p: str) -> bool:
             dp = [[False for j in range (len(p)+1)] for _ in range(len(s) + 1)]
@@ -12,12 +12,8 @@ class Solution:
             prev[0] = True
                 
             for j in range(1, len(p)+1):
-                flag = True
-                for k in range(1, j+1):
-                    if p[k-1] != '*':
-                        flag = False
-                        break
-                prev[j] = flag
+                if(p[j-1] == '*' ):
+                    prev[j] = prev[j-1];
 
             for i in range(1, len(s) + 1):
                 for j in range(1, len(p) + 1):
@@ -31,14 +27,12 @@ class Solution:
                         curr[j] = False
             
                 prev = curr[:]
-               
-
 
             #print(dp)
             return prev[len(p)]
 
 
-
+#         dp = [[-1] * (len(p)+1) for _ in range(len(s) + 1)]
 #         def solver(i, j) -> bool:
 #             if i==0 and j==0: return True
 
