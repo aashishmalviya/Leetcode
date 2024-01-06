@@ -6,35 +6,36 @@ class Solution:
         def solverTab(s: str, p: str) -> bool:
             dp = [[False for j in range (len(p)+1)] for _ in range(len(s) + 1)]
             
-            dp[0][0] = True
+            prev = [False for j in range(len(p) + 1)]
+            curr = [False for j in range(len(p) + 1)]
 
-            # for j in range(1, len(p)+1):
-            #     flag = True
-            #     for k in range(1, j+1):
-            #         if p[k-1] != '*':
-            #             flag = False
-            #             break
-            #     dp[0][j] = flag
+            prev[0] = True
                 
             for j in range(1, len(p)+1):
-                if(p[j-1] == '*' ):
-                    dp[0][j] = dp[0][j-1];
-                
-            # for j in range(1,m+1):
-            # if(p[j-1] == '*' ): dp[0][j] = dp[0][j-1];
+                flag = True
+                for k in range(1, j+1):
+                    if p[k-1] != '*':
+                        flag = False
+                        break
+                prev[j] = flag
 
             for i in range(1, len(s) + 1):
                 for j in range(1, len(p) + 1):
 
                     if s[i-1] == p[j-1] or p[j-1] == '?':
-                        dp[i][j] = dp[i-1][j-1]
+                        curr[j] = prev[j-1]
  
                     elif p[j-1] == '*':
-                        dp[i][j] = dp[i][j-1] or dp[i-1][j]
+                        curr[j] = curr[j-1] or prev[j]
+                    else:
+                        curr[j] = False
+            
+                prev = curr[:]
+               
 
 
             #print(dp)
-            return dp[len(s)][len(p)]
+            return prev[len(p)]
 
 
 
