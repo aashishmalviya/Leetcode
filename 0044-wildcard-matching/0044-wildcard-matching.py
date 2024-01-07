@@ -32,14 +32,17 @@ class Solution:
 
             # Mismatch and no * found yet
             return False
-        return all([p_char == "*" for p_char in p[j:]])
+        
+        # Check if all the remaining chars in pattern are star only, else return False as remaining pattern cant be matched.
+        # all remaining * can be matched so return True
+        
+        #return all([p_char == "*" for p_char in p[j:]])
+        while j < plen:
+            if p[j] != '*':
+                return False
+            j += 1
 
-#         while j < plen:
-#             if p[j] != '*':
-#                 return False
-#             j += 1
-
-#         return True
+        return True
 
 
 # Bottom Up
